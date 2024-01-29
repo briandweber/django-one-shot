@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <div>
+            <h1>{{ list_object.name }}</h1>
+            <h2>Tasks</h2>
+            <table>
+                <thead>
+                    <th>Task</th>
+                    <th>Due date</th>
+                </thead>
+                {% for item in list_object.items.all %}
+                <tr>
+                    <td>{{ item.task }}</td>
+                    <td>{{ item.due_date }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </main>
+</body>
+</html>

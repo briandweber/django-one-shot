@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +18,8 @@
                 <tbody>
                     {% for item in lists %}
                     <tr>
-                        <td>{{ item.name }}</td>
+                        <td><a href="{% url 'todo_list_detail' item.id %}">{{ item.name }}</a></td>
+                        <td>{{ item.items.count }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
