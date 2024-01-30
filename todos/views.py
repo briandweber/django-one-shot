@@ -63,7 +63,7 @@ def todo_item_create(request):
         form = TodoItemForm(request.POST)
         if form.is_valid():
             item = form.save()
-            return redirect("todo_list_detail", id=item.list.id)
+            return redirect("todo_list_detail", id=item.parent_list.id)
     else:
         form = TodoItemForm()
     context = {
@@ -78,7 +78,7 @@ def todo_item_update(request, id):
         form = TodoItemForm(request.POST, instance=model_instance)
         if form.is_valid():
             item = form.save()
-            return redirect("todo_list_detail", id=item.list.id)
+            return redirect("todo_list_detail", id=item.parent_list.id)
     else:
         form = TodoItemForm(instance=model_instance)
     context = {
