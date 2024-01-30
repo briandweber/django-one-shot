@@ -1,36 +1,39 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <main>
-        <div>
-            <h1>My Lists</h1>
-            <p>
-                <a href="{% url 'todo_list_create' %}">Create a new list</a>
-            </p>
-            <p>
-                <a href="{% url 'todo_item_create' %}">Create new item</a>
-            </p>
-            <table>
-                <thead>
-                    <th>Name</th>
-                    <th>Number of items</th>
-                </thead>
-                <tbody>
-                    {% for item in lists %}
-                    <tr>
-                        <td><a href="{% url 'todo_list_detail' item.id %}">{{ item.name }}</a></td>
-                        <td>{{ item.items.count }}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
+      <div>
+        <h1>My Lists</h1>
+        <p>
+          <a href="{% url 'todo_list_create' %}">Create a new list</a>
+        </p>
+        <p>
+          <a href="{% url 'todo_item_create' %}">Create new item</a>
+        </p>
+        <table>
+          <thead>
+            <th>Name</th>
+            <th>Number of items</th>
+          </thead>
+          <tbody>
+            {% for item in lists %}
+              <tr>
+                <td>
+                  <a href="{% url 'todo_list_detail' item.id %}">{{ item.name }}</a>
+                </td>
+                <td>{{ item.items.count }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
     </main>
-</body>
+  </body>
 </html>
