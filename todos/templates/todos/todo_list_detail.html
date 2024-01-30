@@ -9,6 +9,9 @@
     <main>
         <div>
             <h1>{{ list_object.name }}</h1>
+            <p>
+                <a href="{% url 'todo_list_update' list_object.id %}">Edit</a>
+            </p>
             <h2>Tasks</h2>
             <table>
                 <thead>
