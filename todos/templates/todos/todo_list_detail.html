@@ -12,6 +12,9 @@
             <p>
                 <a href="{% url 'todo_list_update' list_object.id %}">Edit</a>
             </p>
+            <p>
+                <a href="{% url 'todo_list_delete' list_object.id %}">Delete</a>
+            </p>
             <h2>Tasks</h2>
             <table>
                 <thead>
