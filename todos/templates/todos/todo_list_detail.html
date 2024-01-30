@@ -23,7 +23,7 @@
                 </thead>
                 {% for item in list_object.items.all %}
                 <tr>
-                    <td>{{ item.task }}</td>
+                    <td><a href="{% url 'todo_item_update' item.id %}">{{ item.task }}</a></td>
                     <td>{{ item.due_date }}</td>
                 </tr>
                 {% endfor %}

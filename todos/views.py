@@ -64,3 +64,17 @@ def todo_item_create(request):
         "form": form,
     }
     return render(request, "todos/create_item.html", context)
+
+def todo_item_update(request, id):
+    model_instance = TodoItem.objects.get(id=id)
+    if request.method == "POST":
+        form = TodoItemForm(request.POST, instance=model_instance)
+        if form.is_valid():
+            item = form.save()
+            return redirect("todo_list_detail", id=item.list.id)
+    else:
+        form = TodoItemForm(instance=model_instance)
+    context = {
+        "form": form,
+    }
+    return render(request, "todos/update_item.html", context)

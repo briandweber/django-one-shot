@@ -1,4 +1,4 @@
-from todos.views import todo_list_list, todo_list_detail, todo_list_create, todo_list_update, todo_list_delete, todo_item_create
+from todos.views import todo_list_list, todo_list_detail, todo_list_create, todo_list_update, todo_list_delete, todo_item_create, todo_item_update
 from django.urls import path
 
 urlpatterns = [
@@ -8,4 +8,5 @@ urlpatterns = [
     path("<int:id>/edit/", todo_list_update, name="todo_list_update"),
     path("<int:id>/delete/", todo_list_delete, name="todo_list_delete"),
     path("items/create/", todo_item_create, name="todo_item_create"),
+    path("items/<int:id>/edit/", todo_item_update, name="todo_item_update"),
 ]
