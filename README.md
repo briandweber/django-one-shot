@@ -1,6 +1,7 @@
 # Django One-Shot
 
 Complete the project specs from Learn.
+Github Version
 
 ## Optional Debugging Tool Setup:
 
